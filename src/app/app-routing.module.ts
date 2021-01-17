@@ -7,6 +7,8 @@ import { PaginaNoEncontradaComponent } from './views/pagina-no-encontrada/pagina
 import { LoginComponent } from './views/login/login.component';
 import { DetalleEntradaComponent } from './views/detalle-entrada/detalle-entrada.component';
 import { FrontComponent } from './views/front/front.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { AuthGuard } from './auth.guard';
 
 
 const  routes:  Routes  = [
@@ -19,6 +21,7 @@ const  routes:  Routes  = [
   ]},
 
   { path: 'login', component: LoginComponent},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
 
   { path: '', redirectTo: 'front/listado', pathMatch: 'full'},
   { path: '**', component: PaginaNoEncontradaComponent}

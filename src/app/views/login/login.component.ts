@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
         localStorage.setItem('nombreUsuario', this.usuario.nombre);
 
-        this.router.navigate(['/listado']);
+        this.router.navigate(['/dashboard']);
       },
       (error: Error) => {
         console.error("Error al realizar el acceso");
