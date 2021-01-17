@@ -1,1 +1,18 @@
-<p>dashboard works!</p>
+<div id="contenedor">
+  <table>
+    <thead>
+      <th>Id</th>
+      <th>Titulo</th>
+      <th>Autor</th>
+      <th>Fecha</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entrada of listadoEntradas">
+        <td>{{ entrada.id }}</td>
+        <td>{{ entrada.titulo }}</td>
+        <td>{{ entrada.autor }}</td>
+        <td>{{ entrada.fecha | date:'dd-MM-yyyy' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
