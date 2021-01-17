@@ -16,6 +16,7 @@ export class EntradaComponent implements OnInit {
 
   constructor() {
     this.entrada = {
+      id: 0,
       titulo: '',
       resumen: ''
     };
@@ -27,6 +28,13 @@ export class EntradaComponent implements OnInit {
 
   public doEvent(): void {
     this.onDoEvent.emit(this.entrada.titulo);
+  }
+
+  public modificarClase(): any {
+    return {
+      'claro': this.entrada.id % 2 == 0,
+      'oscuro': this.entrada.id % 2 != 0
+    }
   }
 
 }
