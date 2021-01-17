@@ -21,7 +21,8 @@ const  routes:  Routes  = [
   ]},
 
   { path: 'login', component: LoginComponent},
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  { path: 'dashboard', canActivate: [AuthGuard], loadChildren:
+    () => import('src/app/views/dashboard/dashboard.module').then((m) => m.DashboardModule)},
 
   { path: '', redirectTo: 'front/listado', pathMatch: 'full'},
   { path: '**', component: PaginaNoEncontradaComponent}
