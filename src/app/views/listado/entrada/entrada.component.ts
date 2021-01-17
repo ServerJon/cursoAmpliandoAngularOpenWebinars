@@ -12,7 +12,7 @@ export class EntradaComponent implements OnInit {
   @Input()
   public entrada: Entrada;
   @Output()
-  public onDoEvent: EventEmitter<string>;
+  public onDoEvent: EventEmitter<number>;
 
   constructor() {
     this.entrada = {
@@ -22,14 +22,14 @@ export class EntradaComponent implements OnInit {
       fecha: '',
       autor: ''
     };
-    this.onDoEvent = new EventEmitter<string>();
+    this.onDoEvent = new EventEmitter<number>();
   }
 
   ngOnInit(): void {
   }
 
   public doEvent(): void {
-    this.onDoEvent.emit(this.entrada.titulo);
+    this.onDoEvent.emit(this.entrada.id);
   }
 
   public modificarClase(): any {

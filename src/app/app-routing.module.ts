@@ -6,15 +6,21 @@ import { AcercaDeNosotrosComponent } from './views/acerca-de-nosotros/acerca-de-
 import { PaginaNoEncontradaComponent } from './views/pagina-no-encontrada/pagina-no-encontrada.component';
 import { LoginComponent } from './views/login/login.component';
 import { DetalleEntradaComponent } from './views/detalle-entrada/detalle-entrada.component';
+import { FrontComponent } from './views/front/front.component';
 
 
 const  routes:  Routes  = [
-  { path: 'listado', component: ListadoComponent },
-  { path: 'nosotros', component: AcercaDeNosotrosComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'detalle-entrada/:id', component: DetalleEntradaComponent},
+  { path: 'front', component: FrontComponent, children: [
+    { path: 'listado', component: ListadoComponent },
+    { path: 'nosotros', component: AcercaDeNosotrosComponent},
+    { path: 'detalle-entrada/:id', component: DetalleEntradaComponent},
 
-  { path: '', redirectTo: '/listado', pathMatch: 'full'},
+    {path: '', redirectTo: 'listado', pathMatch: 'full'}
+  ]},
+
+  { path: 'login', component: LoginComponent},
+
+  { path: '', redirectTo: 'front/listado', pathMatch: 'full'},
   { path: '**', component: PaginaNoEncontradaComponent}
 ];
 

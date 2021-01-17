@@ -13,6 +13,7 @@ import { AcercaDeNosotrosComponent } from './views/acerca-de-nosotros/acerca-de-
 import { LoginComponent } from './views/login/login.component';
 import { EspejoPipe } from './shared/pipes/espejo.pipe';
 import { DetalleEntradaComponent } from './views/detalle-entrada/detalle-entrada.component';
+import { FrontComponent } from './views/front/front.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DetalleEntradaComponent } from './views/detalle-entrada/detalle-entrada
     AcercaDeNosotrosComponent,
     LoginComponent,
     EspejoPipe,
-    DetalleEntradaComponent
+    DetalleEntradaComponent,
+    FrontComponent
   ],
   imports: [
     BrowserModule,
