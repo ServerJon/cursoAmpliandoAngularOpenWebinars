@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map, filter } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 import { Entradas, Entrada } from '../interfaces/entrada';
 
@@ -40,5 +40,13 @@ export class EntradaService {
         }
       )
     );
+  }
+
+  public editarEntrada(entrada: Entrada): Observable<any> {
+    const headers: HttpHeaders = new HttpHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    return this.httpClient.post<any>('https://jsonplaceholder.typicode.com/posts', entrada, { headers });
   }
 }

@@ -7,7 +7,7 @@
       <th>Fecha</th>
     </thead>
     <tbody>
-      <tr *ngFor="let entrada of listadoEntradas">
+      <tr *ngFor="let entrada of listadoEntradas" routerLink="editar-entrada/{{ entrada.id }}">
         <td>{{ entrada.id }}</td>
         <td>{{ entrada.titulo }}</td>
         <td>{{ entrada.autor }}</td>

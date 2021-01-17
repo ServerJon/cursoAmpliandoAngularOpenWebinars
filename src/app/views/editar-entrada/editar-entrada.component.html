@@ -1,0 +1,40 @@
+<div id="contenedor">
+  <form [formGroup]="formEntrada" (ngSubmit)="editarEntrada()">
+    <label>Titulo:</label>
+    <input type="text" formControlName="titulo">
+    <div *ngIf="formEntrada.get('titulo')?.invalid && formEntrada.get('titulo')?.dirty">
+      <div *ngIf="formEntrada.get('titulo')?.errors?.required">
+        El Titulo es obligatorio
+      </div>
+    </div>
+
+    <label>Resumen:</label>
+    <input type="text" formControlName="resumen">
+    <div *ngIf="formEntrada.get('resumen')?.invalid && formEntrada.get('resumen')?.dirty">
+      <div *ngIf="formEntrada.get('resumen')?.errors?.required">
+        El Resumen es obligatorio
+      </div>
+      <div *ngIf="formEntrada.get('resumen')?.errors?.minLength">
+        Resumen mínimo 10 caracteres
+      </div>
+    </div>
+
+    <label>Autor:</label>
+    <input type="text" formControlName="autor">
+    <div *ngIf="formEntrada.get('autor')?.invalid && formEntrada.get('autor')?.dirty">
+      <div *ngIf="formEntrada.get('autor')?.errors?.required">
+        El Autor es obligatorio
+      </div>
+    </div>
+
+    <label>Fecha:</label>
+    <input type="date" formControlName="fecha">
+    <div *ngIf="formEntrada.get('fecha')?.invalid && formEntrada.get('fecha')?.dirty">
+      <div *ngIf="formEntrada.get('fecha')?.errors?.required">
+        La fecha es obligatoria
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!formEntrada.valid">Editar</button>
+  </form>
+</div>
