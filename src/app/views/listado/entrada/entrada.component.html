@@ -1,4 +1,4 @@
 <div id="entrada" [ngClass]="modificarClase()">
-  <h4>{{ entrada.titulo }}</h4>
+  <h4>{{ entrada.titulo | uppercase | espejo }}</h4>
   <p>{{ entrada.resumen }}</p>
 </div>
