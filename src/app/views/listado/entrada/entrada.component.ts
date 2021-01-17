@@ -18,7 +18,9 @@ export class EntradaComponent implements OnInit {
     this.entrada = {
       id: 0,
       titulo: '',
-      resumen: ''
+      resumen: '',
+      fecha: '',
+      autor: ''
     };
     this.onDoEvent = new EventEmitter<string>();
   }
