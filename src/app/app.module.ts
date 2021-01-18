@@ -14,6 +14,7 @@ import { LoginComponent } from './views/login/login.component';
 import { EspejoPipe } from './shared/pipes/espejo.pipe';
 import { DetalleEntradaComponent } from './views/detalle-entrada/detalle-entrada.component';
 import { FrontComponent } from './views/front/front.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FrontComponent } from './views/front/front.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
