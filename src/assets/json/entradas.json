@@ -1,16 +1,25 @@
 {
   "data": [
     {
+      "id": 0,
       "titulo": "Introducción a Angular",
-      "resumen": "En esta lección realizaremos una pequeña introducción al mundo de desarrollo con Angular"
+      "resumen": "En esta lección realizaremos una pequeña introducción al mundo de desarrollo con Angular",
+      "autor": "Lorca",
+      "fecha": "1925-12-22"
     },
     {
+      "id": 1,
       "titulo": "Typescript como lenguaje para Angular",
-      "resumen": "Breve recorrido por el lenguaje de Typescript como base para desarrollar en Angular"
+      "resumen": "Breve recorrido por el lenguaje de Typescript como base para desarrollar en Angular",
+      "autor": "Unamuno",
+      "fecha": "1919-09-15"
     },
     {
+      "id": 2,
       "titulo": "Componentes en Angular",
-      "resumen": "Aprenderemos a usar los componentes en Angular y el porqué de su importancia"
+      "resumen": "Aprenderemos a usar los componentes en Angular y el porqué de su importancia",
+      "autor": "Cervantes",
+      "fecha": "1595-02-05"
     }
   ]
 }

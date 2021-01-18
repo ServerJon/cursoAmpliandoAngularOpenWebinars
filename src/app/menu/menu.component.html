@@ -1,6 +1,7 @@
 <ul id="menu">
   <li><span> </span></li>
-  <li routerLink="/listado"><span>Blog</span></li>
-  <li routerLink="/nosotros"><span>Acerca de</span></li>
-  <li id="acceso" routerLink="/login"><span>Acceso</span></li>
+  <li routerLink="/front/listado"><span>Blog</span></li>
+  <li routerLink="/front/nosotros"><span>Acerca de</span></li>
+  <li *ngIf="miToken == 0" class="acceso" routerLink="/login"><span>Acceso</span></li>
+  <li *ngIf="miToken != 0" class="acceso" ><span><strong>Usuario:</strong> {{ nombreUsuario }}</span></li>
 </ul>

@@ -11,6 +11,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { PaginaNoEncontradaComponent } from './views/pagina-no-encontrada/pagina-no-encontrada.component';
 import { AcercaDeNosotrosComponent } from './views/acerca-de-nosotros/acerca-de-nosotros.component';
 import { LoginComponent } from './views/login/login.component';
+import { EspejoPipe } from './shared/pipes/espejo.pipe';
+import { DetalleEntradaComponent } from './views/detalle-entrada/detalle-entrada.component';
+import { FrontComponent } from './views/front/front.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,13 +24,17 @@ import { LoginComponent } from './views/login/login.component';
     EntradaComponent,
     PaginaNoEncontradaComponent,
     AcercaDeNosotrosComponent,
-    LoginComponent
+    LoginComponent,
+    EspejoPipe,
+    DetalleEntradaComponent,
+    FrontComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

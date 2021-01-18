@@ -1,0 +1,56 @@
+<div id="contenedor">
+  <mat-toolbar color="primary">
+    <span>Curso Desarrollo web, ampliando conocimientos Angular 11</span>
+  </mat-toolbar>
+
+  <h2>Editar <strong>Entrada</strong></h2>
+  <form [formGroup]="formEntrada" (ngSubmit)="editarEntrada()">
+    <mat-form-field appearance="fill">
+      <mat-label>Titulo:</mat-label>
+      <input matInput type="text" formControlName="titulo">
+      <mat-icon matSuffix>note</mat-icon>
+      <div *ngIf="formEntrada.get('titulo')?.invalid && formEntrada.get('titulo')?.dirty">
+        <mat-error *ngIf="formEntrada.get('titulo')?.errors?.required">
+          El Titulo es <strong>obligatorio</strong>
+        </mat-error>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Resumen:</mat-label>
+      <input matInput type="text" formControlName="resumen">
+      <mat-icon matSuffix>description</mat-icon>
+      <div *ngIf="formEntrada.get('resumen')?.invalid && formEntrada.get('resumen')?.dirty">
+        <mat-error *ngIf="formEntrada.get('resumen')?.errors?.required">
+          El Resumen es <strong>obligatorio</strong>
+        </mat-error>
+        <mat-error *ngIf="formEntrada.get('resumen')?.errors?.required">
+          Resumen mínimo <strong>10 caracteres</strong>
+        </mat-error>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Autor:</mat-label>
+      <input matInput type="text" formControlName="autor">
+      <mat-icon matSuffix>face</mat-icon>
+      <div *ngIf="formEntrada.get('autor')?.invalid && formEntrada.get('autor')?.dirty">
+        <mat-error *ngIf="formEntrada.get('autor')?.errors?.required">
+          El Autor es <strong>obligatorio</strong>
+        </mat-error>
+      </div>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha:</mat-label>
+      <input matInput type="date" formControlName="fecha">
+      <div *ngIf="formEntrada.get('fecha')?.invalid && formEntrada.get('fecha')?.dirty">
+        <mat-error *ngIf="formEntrada.get('fecha')?.errors?.required">
+          La Fecha es <strong>obligatoria</strong>
+        </mat-error>
+      </div>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!formEntrada.valid">Editar</button>
+  </form>
+</div>
