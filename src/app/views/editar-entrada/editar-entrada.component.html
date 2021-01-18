@@ -1,40 +1,56 @@
 <div id="contenedor">
+  <mat-toolbar color="primary">
+    <span>Curso Desarrollo web, ampliando conocimientos Angular 11</span>
+  </mat-toolbar>
+
+  <h2>Editar <strong>Entrada</strong></h2>
   <form [formGroup]="formEntrada" (ngSubmit)="editarEntrada()">
-    <label>Titulo:</label>
-    <input type="text" formControlName="titulo">
-    <div *ngIf="formEntrada.get('titulo')?.invalid && formEntrada.get('titulo')?.dirty">
-      <div *ngIf="formEntrada.get('titulo')?.errors?.required">
-        El Titulo es obligatorio
+    <mat-form-field appearance="fill">
+      <mat-label>Titulo:</mat-label>
+      <input matInput type="text" formControlName="titulo">
+      <mat-icon matSuffix>note</mat-icon>
+      <div *ngIf="formEntrada.get('titulo')?.invalid && formEntrada.get('titulo')?.dirty">
+        <mat-error *ngIf="formEntrada.get('titulo')?.errors?.required">
+          El Titulo es <strong>obligatorio</strong>
+        </mat-error>
       </div>
-    </div>
+    </mat-form-field>
 
-    <label>Resumen:</label>
-    <input type="text" formControlName="resumen">
-    <div *ngIf="formEntrada.get('resumen')?.invalid && formEntrada.get('resumen')?.dirty">
-      <div *ngIf="formEntrada.get('resumen')?.errors?.required">
-        El Resumen es obligatorio
+    <mat-form-field appearance="fill">
+      <mat-label>Resumen:</mat-label>
+      <input matInput type="text" formControlName="resumen">
+      <mat-icon matSuffix>description</mat-icon>
+      <div *ngIf="formEntrada.get('resumen')?.invalid && formEntrada.get('resumen')?.dirty">
+        <mat-error *ngIf="formEntrada.get('resumen')?.errors?.required">
+          El Resumen es <strong>obligatorio</strong>
+        </mat-error>
+        <mat-error *ngIf="formEntrada.get('resumen')?.errors?.required">
+          Resumen mínimo <strong>10 caracteres</strong>
+        </mat-error>
       </div>
-      <div *ngIf="formEntrada.get('resumen')?.errors?.minLength">
-        Resumen mínimo 10 caracteres
-      </div>
-    </div>
+    </mat-form-field>
 
-    <label>Autor:</label>
-    <input type="text" formControlName="autor">
-    <div *ngIf="formEntrada.get('autor')?.invalid && formEntrada.get('autor')?.dirty">
-      <div *ngIf="formEntrada.get('autor')?.errors?.required">
-        El Autor es obligatorio
+    <mat-form-field appearance="fill">
+      <mat-label>Autor:</mat-label>
+      <input matInput type="text" formControlName="autor">
+      <mat-icon matSuffix>face</mat-icon>
+      <div *ngIf="formEntrada.get('autor')?.invalid && formEntrada.get('autor')?.dirty">
+        <mat-error *ngIf="formEntrada.get('autor')?.errors?.required">
+          El Autor es <strong>obligatorio</strong>
+        </mat-error>
       </div>
-    </div>
+    </mat-form-field>
 
-    <label>Fecha:</label>
-    <input type="date" formControlName="fecha">
-    <div *ngIf="formEntrada.get('fecha')?.invalid && formEntrada.get('fecha')?.dirty">
-      <div *ngIf="formEntrada.get('fecha')?.errors?.required">
-        La fecha es obligatoria
+    <mat-form-field appearance="fill">
+      <mat-label>Fecha:</mat-label>
+      <input matInput type="date" formControlName="fecha">
+      <div *ngIf="formEntrada.get('fecha')?.invalid && formEntrada.get('fecha')?.dirty">
+        <mat-error *ngIf="formEntrada.get('fecha')?.errors?.required">
+          La Fecha es <strong>obligatoria</strong>
+        </mat-error>
       </div>
-    </div>
+    </mat-form-field>
 
-    <button type="submit" [disabled]="!formEntrada.valid">Editar</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!formEntrada.valid">Editar</button>
   </form>
 </div>
