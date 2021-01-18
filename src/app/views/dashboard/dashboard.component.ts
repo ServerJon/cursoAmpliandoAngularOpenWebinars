@@ -10,9 +10,11 @@ import { EntradaService } from 'src/app/shared/services/entrada.service';
 export class DashboardComponent implements OnInit {
   // Atributo
   public listadoEntradas: Entrada[];
+  public nombreColumnas: Array<string>;
 
   constructor(private entradaService: EntradaService) {
     this.listadoEntradas = [];
+    this.nombreColumnas = ['id', 'titulo', 'autor', 'fecha'];
   }
 
   ngOnInit(): void {
