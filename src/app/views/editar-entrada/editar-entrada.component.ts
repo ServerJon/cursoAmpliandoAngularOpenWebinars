@@ -21,14 +21,15 @@ export class EditarEntradaComponent implements OnInit {
     this.id = 0;
     this.entrada = {
       id: 0,
-      titulo: '',
-      resumen: '',
+      title: '',
+      body: '',
       autor: '',
-      fecha: ''
+      fecha: '',
+      userId: 0
     };
     this.formEntrada = this.formBuilder.group({
-      titulo: ['', Validators.required],
-      resumen: ['', [Validators.required, Validators.minLength(10)]],
+      title: ['', Validators.required],
+      body: ['', [Validators.required, Validators.minLength(10)]],
       fecha: ['', Validators.required],
       autor: ['', Validators.required]
     });
@@ -49,8 +50,8 @@ export class EditarEntradaComponent implements OnInit {
       (data: Entrada) => {
         this.entrada = data;
 
-        this.formEntrada.get('titulo')?.setValue(this.entrada.titulo);
-        this.formEntrada.get('resumen')?.setValue(this.entrada.resumen);
+        this.formEntrada.get('title')?.setValue(this.entrada.title);
+        this.formEntrada.get('body')?.setValue(this.entrada.body);
         this.formEntrada.get('fecha')?.setValue(this.entrada.fecha);
         this.formEntrada.get('autor')?.setValue(this.entrada.autor);
       }
