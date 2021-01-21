@@ -18,10 +18,11 @@ export class DetalleEntradaComponent implements OnInit {
     this.id = 0;
     this.entrada = {
       id: 0,
-      titulo: '',
-      resumen: '',
+      title: '',
+      body: '',
       autor: '',
-      fecha: ''
+      fecha: '',
+      userId: 0
     };
 
 		this.activatedRoute.params.subscribe( paramsUrl => {
