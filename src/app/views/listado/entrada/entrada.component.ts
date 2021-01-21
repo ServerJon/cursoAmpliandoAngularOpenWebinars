@@ -16,9 +16,10 @@ export class EntradaComponent implements OnInit {
 
   constructor() {
     this.entrada = {
-      id: 0,
-      titulo: '',
-      resumen: '',
+      title: '',
+      body: '',
+      id: 1,
+      userId: 1,
       fecha: '',
       autor: ''
     };
