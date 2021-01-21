@@ -7,10 +7,10 @@
   <form [formGroup]="formEntrada" (ngSubmit)="editarEntrada()">
     <mat-form-field appearance="fill">
       <mat-label>Titulo:</mat-label>
-      <input matInput type="text" formControlName="titulo">
+      <input matInput type="text" formControlName="title">
       <mat-icon matSuffix>note</mat-icon>
-      <div *ngIf="formEntrada.get('titulo')?.invalid && formEntrada.get('titulo')?.dirty">
-        <mat-error *ngIf="formEntrada.get('titulo')?.errors?.required">
+      <div *ngIf="formEntrada.get('title')?.invalid && formEntrada.get('title')?.dirty">
+        <mat-error *ngIf="formEntrada.get('title')?.errors?.required">
           El Titulo es <strong>obligatorio</strong>
         </mat-error>
       </div>
@@ -18,13 +18,13 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Resumen:</mat-label>
-      <input matInput type="text" formControlName="resumen">
+      <input matInput type="text" formControlName="body">
       <mat-icon matSuffix>description</mat-icon>
-      <div *ngIf="formEntrada.get('resumen')?.invalid && formEntrada.get('resumen')?.dirty">
-        <mat-error *ngIf="formEntrada.get('resumen')?.errors?.required">
+      <div *ngIf="formEntrada.get('body')?.invalid && formEntrada.get('body')?.dirty">
+        <mat-error *ngIf="formEntrada.get('body')?.errors?.required">
           El Resumen es <strong>obligatorio</strong>
         </mat-error>
-        <mat-error *ngIf="formEntrada.get('resumen')?.errors?.required">
+        <mat-error *ngIf="formEntrada.get('body')?.errors?.required">
           Resumen mínimo <strong>10 caracteres</strong>
         </mat-error>
       </div>

@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Entradas, Entrada } from '../interfaces/entrada';
+import { Entrada } from '../interfaces/entrada';
 
 @Injectable({
   providedIn: 'root'
@@ -12,25 +12,26 @@ export class EntradaService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public recuperarEntradas(): Observable<Entradas> {
+  public recuperarEntradas(): Observable<Entrada[]> {
 
-    return this.httpClient.get<Entradas>('assets/json/entradas.json');
+    return this.httpClient.get<Entrada[]>('assets/json/entradas.json');
   }
 
   public recuperarEntrada(id: number): Observable<Entrada> {
 
-    return this.httpClient.get<Entradas>('assets/json/entradas.json').pipe(
-      map((entradas: Entradas) => {
+    return this.httpClient.get<Entrada[]>('assets/json/entradas.json').pipe(
+      map((entradas: Entrada[]) => {
 
           let entrada: Entrada = {
             id: 0,
             autor: '',
             fecha: '',
-            resumen: '',
-            titulo: ''
+            body: '',
+            title: '',
+            userId: 0
           };
 
-          entradas.data.forEach( (entradaListado: Entrada) => {
+          entradas.forEach( (entradaListado: Entrada) => {
             if (entradaListado.id == id) {
               entrada = entradaListado;
             }
