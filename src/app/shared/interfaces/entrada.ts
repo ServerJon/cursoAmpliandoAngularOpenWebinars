@@ -1,9 +1,6 @@
 export interface Entrada {
+  userId: number;
   id: number;
-  titulo: string;
-  resumen: string;
-}
-
-export interface Entradas {
-  data: Entrada[];
+  title: string;
+  body: string;
 }
