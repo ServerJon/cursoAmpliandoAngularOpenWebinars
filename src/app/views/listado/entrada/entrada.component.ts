@@ -16,8 +16,10 @@ export class EntradaComponent implements OnInit {
 
   constructor() {
     this.entrada = {
-      titulo: '',
-      resumen: ''
+      title: '',
+      body: '',
+      id: 1,
+      userId: 1
     };
     this.onDoEvent = new EventEmitter<string>();
   }
@@ -26,7 +28,7 @@ export class EntradaComponent implements OnInit {
   }
 
   public doEvent(): void {
-    this.onDoEvent.emit(this.entrada.titulo);
+    this.onDoEvent.emit(this.entrada.title);
   }
 
 }
