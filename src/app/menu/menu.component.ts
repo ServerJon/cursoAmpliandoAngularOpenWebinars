@@ -22,13 +22,16 @@ export class MenuComponent implements OnInit {
   }
 
   private cargarUsuario(): void {
-    if (localStorage.getItem('nombreUsuario')) {
-      this.nombreUsuario = localStorage.getItem('nombreUsuario');
-    }
 
     this.tokenService.token$.subscribe(
       (data: number) => {
         this.miToken = data;
+      }
+    )
+
+    this.tokenService.nombreUsuario$.subscribe(
+      (data: string) => {
+        this.nombreUsuario = data;
       }
     )
   }
