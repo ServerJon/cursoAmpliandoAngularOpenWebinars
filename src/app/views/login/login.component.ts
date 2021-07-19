@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       (data: number) => {
         this.tokenService.setToken(data);
 
-        localStorage.setItem('nombreUsuario', this.usuario.nombre);
+        this.tokenService.setNombreUsuario(this.usuario.nombre);
 
         this.router.navigate(['/listado']);
       },
